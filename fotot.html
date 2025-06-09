@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cake Gallery</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" />
+<style>
+    body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background-color: #fff8f0;
+}
+
+header {
+  text-align: center;
+  background-color: #f8c8dc;
+  padding: 1rem 0;
+}
+
+h1 {
+  margin: 0;
+  color: #5a2a2a;
+}
+
+.filters {
+  margin-top: 1rem;
+}
+
+.filters button {
+  margin: 0.25rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #fff;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.filters button:hover {
+  background-color: #ffd6e0;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.cake {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cake:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.cake img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.cake p {
+  padding: 0.5rem;
+  color: #333;
+  font-weight: bold;
+
+
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate {
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.fade-in-up {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.zoom-in {
+  animation: zoomIn 0.8s ease-out forwards;
+}
+
+}
+</style>
+
+<script>
+    function filterCakes(type) {
+  const cakes = document.querySelectorAll('.cake');
+  cakes.forEach(cake => {
+    if (type === 'all' || cake.classList.contains(type)) {
+      cake.style.display = 'block';
+    } else {
+      cake.style.display = 'none';
+    }
+  });
+}
+
+</script>
+</head>
+<body>
+  <header>
+     <h1>EnesCake Gallery</h1>
+
+
+   
+    <div class="filters">
+      <button onclick="filterCakes('all')">All</button>
+      <button onclick="filterCakes('chocolate')">Chocolate</button>
+      <button onclick="filterCakes('vanilla')">Vanilla</button>
+      <button onclick="filterCakes('red-velvet')">Red Velvet</button>
+    </div>
+ <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <nav id="main-nav">
+    <a href="index.html">Kreu</a>
+    <a href="index.html">Menuja</a>
+    <a href="fotot.html">Shiko Fotot</a>
+    <a href="index.html">Të Preferuarat</a>
+    <a href="index.html">Kontakti</a>
+    <button id="theme-toggle">Ndrysho Temën</button>
+  </nav>
+
+  </header>
+
+  <main class="gallery menu-category animate zoom-in">
+    <div class="cake chocolate">
+      <a href="chocolate-8214484_1280.jpg" data-lightbox="cakes" data-title="Chocolate Cake">
+        <img src="chocolate-8214484_1280.jpg" alt="Chocolate Cake" />
+      </a>
+      <p>Chocolate Cake</p>
+    </div>
+
+ <div class="cake red-velvet">
+      <a href="images/cake3.jpg" data-lightbox="cakes" data-title="Red Velvet">
+        <img src="dessert-6494565_1280.jpg" alt="Red Velvet Cake" />
+      </a>
+      <p>Red Velvet</p>
+    </div>
+
+    <div class="cake vanilla">
+      <a href="images/cake2.jpg" data-lightbox="cakes" data-title="Vanilla Dream">
+        <img src="chocolate-8214484_1280.jpg" alt="Vanilla Cake" />
+      </a>
+      <p>Vanilla Dream</p>
+    </div>
+
+ <div class="cake red-velvet">
+      <a href="images/cake3.jpg" data-lightbox="cakes" data-title="Red Velvet">
+        <img src="dessert-6494565_1280.jpg" alt="Red Velvet Cake" />
+      </a>
+      <p>Red Velvet</p>
+    </div>
+
+    <div class="cake red-velvet">
+      <a href="images/cake3.jpg" data-lightbox="cakes" data-title="Red Velvet">
+        <img src="chocolate-8214484_1280.jpg" alt="Red Velvet Cake" />
+      </a>
+      <p>Red Velvet</p>
+    </div>
+
+    <div class="cake red-velvet">
+      <a href="images/cake3.jpg" data-lightbox="cakes" data-title="Red Velvet">
+        <img src="dessert-6494565_1280.jpg" alt="Red Velvet Cake" />
+      </a>
+      <p>Red Velvet</p>
+    </div>
+
+     <div class="cake red-velvet">
+      <a href="images/cake3.jpg" data-lightbox="cakes" data-title="Red Velvet">
+        <img src="dessert-6494565_1280.jpg" alt="Red Velvet Cake" />
+      </a>
+      <p>Red Velvet</p>
+    </div>
+
+    <div class="cake vanilla">
+      <a href="images/cake2.jpg" data-lightbox="cakes" data-title="Vanilla Dream">
+        <img src="chocolate-8214484_1280.jpg" alt="Vanilla Cake" />
+      </a>
+      <p>Vanilla Dream</p>
+    </div>
+
+     <div class="cake red-velvet">
+      <a href="images/cake3.jpg" data-lightbox="cakes" data-title="Red Velvet">
+        <img src="dessert-6494565_1280.jpg" alt="Red Velvet Cake" />
+      </a>
+      <p>Red Velvet</p>
+    </div>
+
+    <div class="cake vanilla">
+      <a href="images/cake2.jpg" data-lightbox="cakes" data-title="Vanilla Dream">
+        <img src="chocolate-8214484_1280.jpg" alt="Vanilla Cake" />
+      </a>
+      <p>Vanilla Dream</p>
+    </div>
+
+     <div class="cake red-velvet">
+      <a href="images/cake3.jpg" data-lightbox="cakes" data-title="Red Velvet">
+        <img src="dessert-6494565_1280.jpg" alt="Red Velvet Cake" />
+      </a>
+      <p>Red Velvet</p>
+    </div>
+
+    <div class="cake vanilla">
+      <a href="images/cake2.jpg" data-lightbox="cakes" data-title="Vanilla Dream">
+        <img src="chocolate-8214484_1280.jpg" alt="Vanilla Cake" />
+      </a>
+      <p>Vanilla Dream</p>
+    </div>
+
+    
+    <!-- Add more cakes as needed -->
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="contact-form animate fade-in-up">
+  <h3>Bëni një Porosi ose Na Kontaktoni</h3>
+  <form>
+    <input type="text" name="name" placeholder="Emri Juaj" required />
+    <input type="email" name="email" placeholder="Email-i Juaj" required />
+    <textarea name="message" rows="5" placeholder="Mesazhi apo Detajet e Porosisë" required></textarea>
+    <button type="submit">Dërgo</button>
+  </form>
+</section>
+
+<footer id="contact">
+    <p>Hapur çdo ditë: 8:00 - 20:00</p>
+    <p>Na ndiqni në Instagram & Facebook</p>
+    <p>Kontakti: hello@enescake.com</p>
+    <p>Created by: &copy; EnesTahiri1516@gmail.com
+    </p>
+</footer>
+
+<!-- <script src="script.js"></script> -->
+
+
+
+
+
+
+
+
+</html>
